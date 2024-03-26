@@ -1,0 +1,13 @@
+# How many seconds of uptime until the server should be restarted.
+#
+# (Default 86400 seconds = 24 hours)
+autorestart_interval (Restart interval) int 86400
+
+# The delay/grace period in seconds before server is actually restarted,
+# if there are still players online on the server when restart is imminent.
+#
+# If the server is empty before this period runs out the server is restarted
+# immediately. If this value is 0 the grace period is disabled.
+#
+# (Default 600 seconds = 10 minutes)
+autorestart_delay (Restart grace period) int 600
