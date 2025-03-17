@@ -5,6 +5,9 @@ local restartdelay = core.settings:get("autorestart_delay") or 10*60
 local polldelay = 5
 local waittime = 0
 
+local function red(s) return core.colorize("#FF0000", s) end
+local function yellow(s) return core.colorize("#FFFF00", s) end
+
 local function dotherestart()
 	core.request_shutdown("Server is restarting. Please reconnect in a couple seconds.", true, 5)
 end
