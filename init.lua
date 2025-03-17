@@ -2,8 +2,6 @@
 local interval = core.settings:get("autorestart_interval") or 24*60*60
 local restartdelay = core.settings:get("autorestart_delay") or 10*60
 
-local shouldrestart = false
-
 local polldelay = 5
 local waittime = 0
 
@@ -21,7 +19,6 @@ local function pollplayers()
 end
 
 core.after(interval, function()
-	shouldrestart = true
 	if #core.get_connected_players() > 0 and restartdelay ~= 0 then
 		core.chat_send_all(red("Server is restarting soon!"))
 		core.chat_send_all(yellow("The server will automatically restart in "..(restartdelay/60).." minutes, or right away if no players are online."))
